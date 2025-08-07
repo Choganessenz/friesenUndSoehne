@@ -26,6 +26,11 @@
 
     <!-- Header Section -->
     <section class="projekte-header">
+        <!-- Background Image -->
+        <img src="material/projekte_bild.jpg" alt="Friesen & Söhne Projekte" class="projekte-header-image">
+
+        <div class="projekte-header-overlay"></div>
+        
         <div class="header-container">
             <div class="header-content">
                 <div class="section-badge">
@@ -523,6 +528,15 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    timelineObserver.unobserve(entry.target);
                 }
             });
         }, observerOptions);
