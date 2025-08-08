@@ -502,7 +502,7 @@ body {
 }
 
 .image-item:not(.main-image) {
-    height: 150px;
+    height: 250px;
 }
 
 .image-item img {
